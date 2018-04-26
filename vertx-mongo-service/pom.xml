@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>vertx-client-services</artifactId>
+    <groupId>io.vertx</groupId>
+    <version>3.5.1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>vertx-mongo-service</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-mongo-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.flapdoodle.embed</groupId>
+      <artifactId>de.flapdoodle.embed.mongo</artifactId>
+      <version>2.0.3</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-mongo-client</artifactId>
+      <version>3.5.1</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>biz.aQute.bnd</groupId>
+          <artifactId>bnd-maven-plugin</artifactId>
+          <version>3.2.0</version>
+          <executions>
+            <execution>
+              <id>default-bnd-process</id>
+              <goals>
+                <goal>bnd-process</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <bnd><![CDATA[
+            Import-Package: \
+              groovy.lang.*;resolution:=optional,\
+              org.codehaus.groovy.*;resolution:=optional,\
+              kotlin.*;resolution:=optional,\
+              io.vertx.groovy.*;resolution:=optional,\
+              io.vertx.ext.auth.*;resolution:=optional,\
+              io.vertx.lang.rxjava.*;resolution:=optional,\
+              io.vertx.lang.groovy.*;resolution:=optional,\
+              io.vertx.codegen.annotations;resolution:=optional,\
+              io.vertx.rx.java;resolution:=optional,\
+              io.vertx.rxjava.core.*;resolution:=optional,\
+              io.vertx.rxjava.ext.auth.*;resolution:=optional,\
+              rx.*;resolution:=optional,\
+              *
+            -exportcontents: !*impl, !examples, *
+            ]]></bnd>
+          </configuration>
+        </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,4 @@
+language: java
+jdk:
+  - oraclejdk8
+script: mvn test -Dtest.disableIpV6=true
