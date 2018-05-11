@@ -27,12 +27,14 @@ fun ConsulClientOptions(
   forceSni: Boolean? = null,
   http2ClearTextUpgrade: Boolean? = null,
   http2ConnectionWindowSize: Int? = null,
+  http2KeepAliveTimeout: Int? = null,
   http2MaxPoolSize: Int? = null,
   http2MultiplexingLimit: Int? = null,
   idleTimeout: Int? = null,
   initialSettings: io.vertx.core.http.Http2Settings? = null,
   jdkSslEngineOptions: io.vertx.core.net.JdkSSLEngineOptions? = null,
   keepAlive: Boolean? = null,
+  keepAliveTimeout: Int? = null,
   keyStoreOptions: io.vertx.core.net.JksOptions? = null,
   localAddress: String? = null,
   logActivity: Boolean? = null,
@@ -52,6 +54,7 @@ fun ConsulClientOptions(
   pfxTrustOptions: io.vertx.core.net.PfxOptions? = null,
   pipelining: Boolean? = null,
   pipeliningLimit: Int? = null,
+  poolCleanerPeriod: Int? = null,
   protocolVersion: HttpVersion? = null,
   proxyOptions: io.vertx.core.net.ProxyOptions? = null,
   receiveBufferSize: Int? = null,
@@ -128,6 +131,9 @@ fun ConsulClientOptions(
   if (http2ConnectionWindowSize != null) {
     this.setHttp2ConnectionWindowSize(http2ConnectionWindowSize)
   }
+  if (http2KeepAliveTimeout != null) {
+    this.setHttp2KeepAliveTimeout(http2KeepAliveTimeout)
+  }
   if (http2MaxPoolSize != null) {
     this.setHttp2MaxPoolSize(http2MaxPoolSize)
   }
@@ -145,6 +151,9 @@ fun ConsulClientOptions(
   }
   if (keepAlive != null) {
     this.setKeepAlive(keepAlive)
+  }
+  if (keepAliveTimeout != null) {
+    this.setKeepAliveTimeout(keepAliveTimeout)
   }
   if (keyStoreOptions != null) {
     this.setKeyStoreOptions(keyStoreOptions)
@@ -202,6 +211,9 @@ fun ConsulClientOptions(
   }
   if (pipeliningLimit != null) {
     this.setPipeliningLimit(pipeliningLimit)
+  }
+  if (poolCleanerPeriod != null) {
+    this.setPoolCleanerPeriod(poolCleanerPeriod)
   }
   if (protocolVersion != null) {
     this.setProtocolVersion(protocolVersion)
