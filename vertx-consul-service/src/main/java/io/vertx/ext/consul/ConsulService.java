@@ -149,11 +149,11 @@ public interface ConsulService extends ConsulClient {
 
   @Override
   @Fluent
-  ConsulService healthState(CheckStatus checkStatus, Handler<AsyncResult<CheckList>> resultHandler);
+  ConsulService healthState(HealthState healthState, Handler<AsyncResult<CheckList>> resultHandler);
 
   @Override
   @Fluent
-  ConsulService healthStateWithOptions(CheckStatus checkStatus, CheckQueryOptions options, Handler<AsyncResult<CheckList>> resultHandler);
+  ConsulService healthStateWithOptions(HealthState healthState, CheckQueryOptions options, Handler<AsyncResult<CheckList>> resultHandler);
 
   @Override
   @Fluent
