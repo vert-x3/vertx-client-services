@@ -199,14 +199,14 @@ public class ConsulServiceImpl implements ConsulService {
   }
 
   @Override
-  public ConsulService healthState(CheckStatus checkStatus, Handler<AsyncResult<CheckList>> resultHandler) {
-    consulClient.healthState(checkStatus, resultHandler);
+  public ConsulService healthState(HealthState healthState, Handler<AsyncResult<CheckList>> handler) {
+    consulClient.healthState(healthState, handler);
     return this;
   }
 
   @Override
-  public ConsulService healthStateWithOptions(CheckStatus checkStatus, CheckQueryOptions options, Handler<AsyncResult<CheckList>> resultHandler) {
-    consulClient.healthStateWithOptions(checkStatus, options, resultHandler);
+  public ConsulService healthStateWithOptions(HealthState healthState, CheckQueryOptions checkQueryOptions, Handler<AsyncResult<CheckList>> handler) {
+    consulClient.healthStateWithOptions(healthState, checkQueryOptions, handler);
     return this;
   }
 
