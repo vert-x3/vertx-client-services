@@ -1,10 +1,6 @@
 package io.vertx.ext.mongo;
 
-import io.vertx.codegen.annotations.Fluent;
-import io.vertx.codegen.annotations.GenIgnore;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.ProxyIgnore;
-import io.vertx.codegen.annotations.VertxGen;
+import io.vertx.codegen.annotations.*;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
@@ -239,6 +235,19 @@ public interface MongoService extends MongoClient {
   @Override
   @GenIgnore
   default ReadStream<JsonObject> distinctBatchWithQuery(String collection, String fieldName, String resultClassname, JsonObject query, int batchSize) {
+    throw new UnsupportedOperationException();
+  }
+
+
+  @Override
+  @GenIgnore
+  default ReadStream<JsonObject> aggregate(final String collection, final JsonArray pipeline) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  @GenIgnore
+  default ReadStream<JsonObject> aggregateWithOptions(String collection, final JsonArray pipeline, final AggregateOptions options) {
     throw new UnsupportedOperationException();
   }
 
