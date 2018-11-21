@@ -31,12 +31,12 @@
   </parent>
 
   <artifactId>vertx-client-services</artifactId>
-  <version>3.6.0-SNAPSHOT</version>
+  <version>3.6.0.CR2</version>
 
   <name>Vert.x Client Services</name>
 
   <properties>
-    <stack.version>3.6.0-SNAPSHOT</stack.version>
+    <stack.version>3.6.0.CR2</stack.version>
     <doc.skip>true</doc.skip>
   </properties>
 
