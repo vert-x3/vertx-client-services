@@ -35,7 +35,7 @@ default is "vertx.mail".
 
 [source,$lang]
 ----
-{@link examples.Examples#createService}
+{@link examples.MailServiceExamples#createService}
 ----
 
 The behaviour of MailClient and MailService is the same, if you like you can use the
@@ -45,7 +45,7 @@ A more complete example for sending a mail via the event bus is this:
 
 [source,$lang]
 ----
-{@link examples.Examples#exampleService}
+{@link examples.MailServiceExamples#exampleService}
 ----
 
 == Service listener

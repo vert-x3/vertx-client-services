@@ -23,7 +23,7 @@ import io.vertx.ext.mail.MailService;
 /**
  * @author <a href="mailto:julien@julienviet.com">Julien Viet</a>
  */
-public class Examples {
+public class MailServiceExamples {
 
   public void createService(Vertx vertx) {
     MailService mailService = MailService.createEventBusProxy(vertx, "vertx.mail");
