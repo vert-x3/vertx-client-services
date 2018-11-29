@@ -1,7 +1,3 @@
 = Vert.x service proxies for Vert.x clients
 
-Vert.x service proxies for
-
-* vertx-mail-client
-* vertx-consul-client
-* vertx-mongo-client
+Module removed in Vert.x 4.
